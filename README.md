@@ -1,7 +1,7 @@
 # terraform-module-jenkins-webhook-infrastructure
 
 <!-- TODO fill in resource name in link to product documentation -->
-Terraform module for [terraform-module-jenkins-webhook-infrastructure]([https://example.com](https://github.com/hmcts/terraform-module-jenkins-webhook-infrastructure).
+Terraform module for building required Jenkins Webhook relay in instrastructure as code.
 
 ## Example
 
