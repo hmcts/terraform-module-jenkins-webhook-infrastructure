@@ -8,7 +8,7 @@ resource "azurerm_logic_app_workflow" "logic_app_workflow" {
     type = "SystemAssigned"
   }
 
-  tags = var.common_tags 
+  tags = var.common_tags
 }
 
 resource "azurerm_resource_group_template_deployment" "logic_app_deployment" {
