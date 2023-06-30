@@ -1,7 +1,3 @@
-output "resource_group_name" {
-  value = "resource_group_name"
-}
-
-output "resource_group_location" {
-  value = "resource_group_location"
+output "logicapp-trigger-endpoint" {
+  value = jsondecode(azurerm_resource_group_template_deployment.logic_app_deployment.output_content).callbackUrl.value
 }

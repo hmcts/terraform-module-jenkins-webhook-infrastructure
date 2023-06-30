@@ -1,23 +1,41 @@
-variable "env" {
-  description = "Environment value."
-  type        = string
+variable "subscription_id" {
+  description = "Enter Azure subscription id."
 }
+variable "location" {
+  description = "Enter Azure location."
 
-variable "common_tags" {
-  description = "Common tag to be applied to resources."
-  type        = map(string)
+}
+variable "env" {
+  description = "Enter the environment. eg prod, aat"
 }
 
 variable "product" {
-  description = "https://hmcts.github.io/glossary/#product"
-  type        = string
+  description = "The name of the product."
+}
+variable "builtFrom" {
+  description = "The name of the Github repo."
+}
+
+variable "expiresAfter" {
+  description = "Expiration date"
 }
 
 variable "project" {
-  description = "Project name - sds or cft."
+  description = "The name of the project."
 }
+variable "servicebus_enable_private_endpoint" {
+  description = "Enable private endpoint."
 
-variable "component" {
-  description = "https://hmcts.github.io/glossary/#component"
-  type        = string
+}
+variable "queue_name" {
+
+  description = "Name of the servicebus Queue."
+}
+variable "zone_redundant" {
+  description = "Enable Zone redundancy."
+
+}
+variable "enable_workflow" {
+  description = "Enable workflow"
+
 }
