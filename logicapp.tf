@@ -1,5 +1,5 @@
 resource "azurerm_logic_app_workflow" "logic_app_workflow" {
-  name                = "github-jenkins-${var.env}"
+  name                = "github-jenkins-${project}-${var.env}"
   enabled             = var.enable_workflow
   location            = var.location
   resource_group_name = azurerm_resource_group.azure_resource_group.name

@@ -11,7 +11,7 @@ module "servicebus-namespace" {
     azurerm.private_endpoint = azurerm.private_endpoint
   }
   source                  = "git::https://github.com/hmcts/terraform-module-servicebus-namespace?ref=master"
-  name                    = "github-jenkins-${var.env}"
+  name                    = "github-jenkins-${var.project}-${var.env}"
   resource_group_name     = azurerm_resource_group.azure_resource_group.name
   location                = var.location
   env                     = var.env
