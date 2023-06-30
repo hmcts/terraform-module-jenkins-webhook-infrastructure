@@ -1,14 +1,14 @@
-# terraform-module-template
+# terraform-module-jenkins-webhook-infrastructure
 
 <!-- TODO fill in resource name in link to product documentation -->
-Terraform module for [Resource name](https://example.com).
+Terraform module for building required Jenkins Webhook relay in instrastructure as code.
 
 ## Example
 
 <!-- todo update module name
 ```hcl
-module "todo_resource_name" {
-  source = "git@github.com:hmcts/terraform-module-postgresql-flexible?ref=master"
+module "jenkins-webhook-relay" {
+  source = "git@github.com:hmcts/terraform-module-jenkins-webhook-infrastructure?ref=master"
   ...
 }
 
