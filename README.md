@@ -51,6 +51,7 @@ module "jenkins-webhook-relay" {
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | <a name="input_builtFrom"></a> [builtFrom](#input\_builtFrom) | The name of the Github repo. | `any` | n/a | yes |
+| <a name="input_common_tags"></a> [common\_tags](#input\_common\_tags) | Common tag to be applied to resources. | `map(string)` | n/a | yes |
 | <a name="input_enable_workflow"></a> [enable\_workflow](#input\_enable\_workflow) | Enable workflow | `any` | n/a | yes |
 | <a name="input_env"></a> [env](#input\_env) | Enter the environment. eg prod, aat | `any` | n/a | yes |
 | <a name="input_expiresAfter"></a> [expiresAfter](#input\_expiresAfter) | Expiration date | `any` | n/a | yes |
