@@ -15,7 +15,7 @@ module "servicebus-namespace" {
   resource_group_name     = azurerm_resource_group.azure_resource_group.name
   location                = var.location
   env                     = var.env
-  common_tags             = module.ctags.common_tags
+  common_tags             = var.common_tags
   project                 = var.project
   enable_private_endpoint = false #var.servicebus_enable_private_endpoint
   zone_redundant          = var.zone_redundant
@@ -31,7 +31,7 @@ resource "azurerm_api_connection" "connection" {
     connectionString = module.servicebus-namespace.primary_send_and_listen_connection_string
   }
 
-  tags = module.ctags.common_tags
+  tags = var.common_tags
 
   lifecycle {
 

@@ -39,3 +39,7 @@ variable "enable_workflow" {
   description = "Enable workflow"
 
 }
+variable "common_tags" {
+  description = "Common tag to be applied to resources."
+  type        = map(string)
+}
