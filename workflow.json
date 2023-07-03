@@ -1744,7 +1744,7 @@
                                     }
                                 },
                                 "method": "post",
-                                "path": "/@{encodeURIComponent(encodeURIComponent(parameters('servicebus_queue')))}/messages"
+                                "path": "/@{encodeURIComponent(encodeURIComponent('jenkins'))}/messages"
                             }
                         }
                     },
