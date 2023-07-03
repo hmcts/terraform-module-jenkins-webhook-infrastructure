@@ -23,6 +23,7 @@ resource "azurerm_resource_group_template_deployment" "logic_app_deployment" {
     "location"        = { value = var.location }
     "commonTags"      = { value = base64encode(jsonencode(var.common_tags)) }
     "subscription_id" = { value = var.subscription_id }
+    "sb_con_name"     = { value = azurerm_api_connection.connection.name}
   })
 
   tags = var.common_tags
