@@ -1,15 +1,29 @@
 # terraform-module-jenkins-webhook-infrastructure
 
-<!-- TODO fill in resource name in link to product documentation -->
-Terraform module for building required Jenkins Webhook relay in instrastructure as code.
+
+Terraform module for building required Jenkins Webhook relay infrastructure as code.
 
 ## Example
 
-<!-- todo update module name
 ```hcl
+
 module "jenkins-webhook-relay" {
-  source = "git@github.com:hmcts/terraform-module-jenkins-webhook-infrastructure?ref=master"
-  ...
+  providers = {
+    azurerm.private_endpoint = azurerm.private_endpoint
+  }
+  source                             = "git::https://github.com/hmcts/terraform-module-jenkins-webhook-infrastructure?ref=main"
+  subscription_id                    = var.subscription_id
+  env                                = var.env
+  product                            = var.product
+  location                           = var.location
+  builtFrom                          = var.builtFrom
+  expiresAfter                       = var.expiresAfter
+  project                            = "sds" # or "cft"
+  servicebus_enable_private_endpoint = var.servicebus_enable_private_endpoint
+  queue_name                         = var.queue_name
+  zone_redundant                     = var.zone_redundant
+  enable_workflow                    = var.enable_workflow
+  common_tags                        = module.tags.common_tags
 }
 
 ```

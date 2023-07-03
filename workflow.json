@@ -26,6 +26,10 @@
         "commonTags": {
             "defaultValue": "",
             "type": "string"
+        },
+        "servicebus_queue": {
+            "defaultValue": "jenkins",
+            "type": "string"
         }
 
      },
@@ -1740,7 +1744,7 @@
                                     }
                                 },
                                 "method": "post",
-                                "path": "/@{encodeURIComponent(encodeURIComponent('test'))}/messages"
+                                "path": "/@{encodeURIComponent(encodeURIComponent(parameters('servicebus_queue')))}/messages"
                             }
                         }
                     },
