@@ -1759,7 +1759,8 @@
                             "servicebus_1": {
                                 "connectionId": "[resourceId('Microsoft.Web/connections', parameters('sb_con_name'))]",
                                 "connectionName": "servicebus-connection",
-                                "id": "[parameters('apiconnnection_id')]" 
+                                "id": "[subscriptionResourceId('Microsoft.Web/locations/managedApis', replace(toLower(parameters('location')),' ', '' ), 'servicebus')]"
+
                                 
                             }
                         }
