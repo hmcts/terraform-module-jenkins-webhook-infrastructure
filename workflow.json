@@ -30,6 +30,9 @@
         "servicebus_queue": {
             "defaultValue": "jenkins",
             "type": "string"
+        },
+        "apiconnnection_id": {
+            "type": "string"
         }
 
      },
@@ -1756,7 +1759,7 @@
                             "servicebus_1": {
                                 "connectionId": "[resourceId('Microsoft.Web/connections', parameters('sb_con_name'))]",
                                 "connectionName": "servicebus-connection",
-                                "id": "[subscriptionResourceId('Microsoft.Web/locations/managedApis', parameters('location'), 'servicebus')]"
+                                "id": "[parameters('apiconnnection_id')]" 
                                 
                             }
                         }
