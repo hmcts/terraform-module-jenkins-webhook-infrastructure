@@ -30,11 +30,7 @@
         "servicebus_queue": {
             "defaultValue": "jenkins",
             "type": "string"
-        },
-        "apiconnnection_id": {
-            "type": "string"
         }
-
      },
     "variables": {
         "tags": "[base64ToJson(parameters('commonTags'))]"
