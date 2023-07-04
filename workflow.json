@@ -31,7 +31,6 @@
             "defaultValue": "jenkins",
             "type": "string"
         }
-
      },
     "variables": {
         "tags": "[base64ToJson(parameters('commonTags'))]"
@@ -1756,7 +1755,8 @@
                             "servicebus_1": {
                                 "connectionId": "[resourceId('Microsoft.Web/connections', parameters('sb_con_name'))]",
                                 "connectionName": "servicebus-connection",
-                                "id": "[subscriptionResourceId('Microsoft.Web/locations/managedApis', parameters('location'), 'servicebus')]"
+                                "id": "[subscriptionResourceId('Microsoft.Web/locations/managedApis', replace(toLower(parameters('location')),' ', '' ), 'servicebus')]"
+
                                 
                             }
                         }

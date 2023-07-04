@@ -81,6 +81,7 @@ module "jenkins-webhook-relay" {
 
 | Name | Description |
 |------|-------------|
+| <a name="output_apiconnection_id"></a> [apiconnection\_id](#output\_apiconnection\_id) | n/a |
 | <a name="output_logicapp-trigger-endpoint"></a> [logicapp-trigger-endpoint](#output\_logicapp-trigger-endpoint) | n/a |
 <!-- END_TF_DOCS -->
 
