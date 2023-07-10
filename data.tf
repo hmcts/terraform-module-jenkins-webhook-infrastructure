@@ -12,6 +12,6 @@ locals {
   rg_name      = strcontains(var.product, "sds") ? var.env : local.mgmt_env
 }
 data "azurerm_user_assigned_identity" "keda" {
-  name                = "keda-${mgmt_env}-mi"
-  resource_group_name = "managed-identities-${rg_name}-rg"
+  name                = "keda-${local.gmt_env}-mi"
+  resource_group_name = "managed-identities-${local.rg_name}-rg"
 }
