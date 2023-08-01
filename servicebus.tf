@@ -4,6 +4,7 @@ module "servicebus-queue" {
   name                = var.queue_name
   namespace_name      = module.servicebus-namespace.name
   resource_group_name = azurerm_resource_group.azure_resource_group.name
+  max_delivery_count  = var.max_delivery_count
 }
 
 module "servicebus-namespace" {
