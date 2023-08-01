@@ -72,6 +72,7 @@ module "jenkins-webhook-relay" {
 | <a name="input_env"></a> [env](#input\_env) | Enter the environment. eg prod, aat | `any` | n/a | yes |
 | <a name="input_expiresAfter"></a> [expiresAfter](#input\_expiresAfter) | Expiration date | `any` | n/a | yes |
 | <a name="input_location"></a> [location](#input\_location) | Enter Azure location. | `any` | n/a | yes |
+| <a name="input_max_delivery_count"></a> [max\_delivery\_count](#input\_max\_delivery\_count) | Integer value which controls when a message is automatically dead lettered | `number` | `10` | no |
 | <a name="input_product"></a> [product](#input\_product) | The name of the product. | `any` | n/a | yes |
 | <a name="input_project"></a> [project](#input\_project) | The name of the project. | `any` | n/a | yes |
 | <a name="input_queue_name"></a> [queue\_name](#input\_queue\_name) | Name of the servicebus Queue. | `any` | n/a | yes |
