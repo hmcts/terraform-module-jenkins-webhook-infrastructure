@@ -43,3 +43,7 @@ variable "common_tags" {
   description = "Common tag to be applied to resources."
   type        = map(string)
 }
+variable "max_delivery_count" {
+  description = "Integer value which controls when a message is automatically dead lettered"
+  default = 10
+}
