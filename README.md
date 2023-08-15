@@ -54,6 +54,7 @@ module "jenkins-webhook-relay" {
 | Name | Type |
 |------|------|
 | [azurerm_api_connection.connection](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/api_connection) | resource |
+| [azurerm_logic_app_integration_account.this](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/logic_app_integration_account) | resource |
 | [azurerm_logic_app_workflow.logic_app_workflow](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/logic_app_workflow) | resource |
 | [azurerm_resource_group.azure_resource_group](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/resource_group) | resource |
 | [azurerm_resource_group_template_deployment.logic_app_deployment](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/resource_group_template_deployment) | resource |
