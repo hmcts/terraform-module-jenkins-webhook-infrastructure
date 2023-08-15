@@ -9,27 +9,27 @@
 
         "location": {
             "defaultValue": "uksouth",
-            "type": "string" 
+            "type": "String"
         },
         "rg": {
             "defaultValue": "",
-            "type": "string" 
+            "type": "String"
         },
         "sb_con_name": {
             "defaultValue": "github-sb-jenkins-con",
-            "type": "string" 
+            "type": "String"
         },
         "subscription_id": {
             "defaultValue": "",
-            "type": "string" 
+            "type": "String"
         },
         "commonTags": {
             "defaultValue": "",
-            "type": "string"
+            "type": "String"
         },
         "servicebus_queue": {
             "defaultValue": "jenkins",
-            "type": "string"
+            "type": "String"
         }
      },
     "variables": {
