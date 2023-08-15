@@ -11,6 +11,11 @@
             "defaultValue": "uksouth",
             "type": "String"
         },
+
+        "integration_account_id": {
+            "type": "String"
+        },
+
         "rg": {
             "defaultValue": "",
             "type": "String"
@@ -43,6 +48,9 @@
             "location": "[parameters('location')]",
             "tags": "[variables('tags')]",
             "properties": {
+                "integrationAccount": {
+                    "id": "[parameters('integration_account_id')]"
+                },
                 "state": "Enabled",
                 "definition": {
                     "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
