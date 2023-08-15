@@ -1,8 +1,17 @@
-resource "azurerm_logic_app_workflow" "logic_app_workflow" {
+resource "azurerm_logic_app_integration_account" "this" {
   name                = "github-jenkins-${var.project}-${var.env}"
-  enabled             = var.enable_workflow
-  location            = var.location
   resource_group_name = azurerm_resource_group.azure_resource_group.name
+  location            = azurerm_resource_group.azure_resource_group.location
+  sku_name            = "Free"
+  tags                = var.common_tags
+}
+
+resource "azurerm_logic_app_workflow" "logic_app_workflow" {
+  name                             = "github-jenkins-${var.project}-${var.env}"
+  enabled                          = var.enable_workflow
+  location                         = var.location
+  resource_group_name              = azurerm_resource_group.azure_resource_group.name
+  logic_app_integration_account_id = azurerm_logic_app_integration_account.this.id
 
   identity {
     type = "SystemAssigned"
