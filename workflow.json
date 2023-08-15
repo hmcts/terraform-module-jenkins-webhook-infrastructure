@@ -4,7 +4,7 @@
     "parameters": {
         "logic_app_name": {
             "defaultValue": "",
-            "type": "string"
+            "type": "String"
         },
 
         "location": {
