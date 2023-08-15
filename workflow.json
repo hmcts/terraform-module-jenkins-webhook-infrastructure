@@ -4,32 +4,37 @@
     "parameters": {
         "logic_app_name": {
             "defaultValue": "",
-            "type": "string"
+            "type": "String"
         },
 
         "location": {
             "defaultValue": "uksouth",
-            "type": "string" 
+            "type": "String"
         },
+
+        "integration_account_id": {
+            "type": "String"
+        },
+
         "rg": {
             "defaultValue": "",
-            "type": "string" 
+            "type": "String"
         },
         "sb_con_name": {
             "defaultValue": "github-sb-jenkins-con",
-            "type": "string" 
+            "type": "String"
         },
         "subscription_id": {
             "defaultValue": "",
-            "type": "string" 
+            "type": "String"
         },
         "commonTags": {
             "defaultValue": "",
-            "type": "string"
+            "type": "String"
         },
         "servicebus_queue": {
             "defaultValue": "jenkins",
-            "type": "string"
+            "type": "String"
         }
      },
     "variables": {
@@ -43,6 +48,9 @@
             "location": "[parameters('location')]",
             "tags": "[variables('tags')]",
             "properties": {
+                "integrationAccount": {
+                    "id": "[parameters('integration_account_id')]"
+                },
                 "state": "Enabled",
                 "definition": {
                     "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
