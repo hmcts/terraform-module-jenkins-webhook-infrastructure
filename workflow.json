@@ -1713,10 +1713,15 @@
                         }
                     },
                     "actions": {
-                        "Compose": {
+                        "Execute_JavaScript_Code": {
                             "runAfter": {},
-                            "type": "Compose",
-                            "inputs": "@triggerBody()"
+                            "type": "JavaScriptCode",
+                            "inputs": {
+                                "code": "const input = workflowContext.trigger.outputs.body\r\n\r\nif (input.pull_request && input.pull_request.body) {\r\n    input.pull_request.body = \"*** Truncated ***\"\r\n}\r\n\r\nif (input.changes && input.changes.body && input.changes.body.from) {\r\n    input.changes.body.from = \"*** Truncated ***\"\r\n}\r\n\r\nreturn input",
+                                "explicitDependencies": {
+                                    "includeTrigger": true
+                                }
+                            }
                         },
                         "Response": {
                             "runAfter": {
@@ -1735,14 +1740,14 @@
                         },
                         "Send_message": {
                             "runAfter": {
-                                "Compose": [
+                                "Execute_JavaScript_Code": [
                                     "Succeeded"
                                 ]
                             },
                             "type": "ApiConnection",
                             "inputs": {
                                 "body": {
-                                    "ContentData": "@{base64(outputs('Compose'))}",
+                                    "ContentData": "@{base64(body('Execute_JavaScript_Code'))}",
                                     "ContentType": "text/plain"
                                 },
                                 "host": {
