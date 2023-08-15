@@ -7,10 +7,11 @@ resource "azurerm_logic_app_integration_account" "this" {
 }
 
 resource "azurerm_logic_app_workflow" "logic_app_workflow" {
-  name                = "github-jenkins-${var.project}-${var.env}"
-  enabled             = var.enable_workflow
-  location            = var.location
-  resource_group_name = azurerm_resource_group.azure_resource_group.name
+  name                             = "github-jenkins-${var.project}-${var.env}"
+  enabled                          = var.enable_workflow
+  location                         = var.location
+  resource_group_name              = azurerm_resource_group.azure_resource_group.name
+  logic_app_integration_account_id = azurerm_logic_app_integration_account.this.id
 
   identity {
     type = "SystemAssigned"
