@@ -35,8 +35,7 @@ resource "azurerm_api_connection" "connection" {
   tags = var.common_tags
 
   lifecycle {
-
-    ignore_changes = ["parameter_values"]
+    ignore_changes = [parameter_values]
   }
 }
 
