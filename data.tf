@@ -7,7 +7,7 @@ data "local_file" "logic_app" {
 }
 locals {
   cft_mgmt_env = (var.env == "ptlsbox") && strcontains(var.product, "cft") ? "cftsbox-intsvc" : "cftptl-intsvc"
-  sds_mgmt_env = (var.env == "ptlsbox") && strcontains(var.product, "sds") ? "sdssbox-intsvc" : "sdsptl-intsvc"
+  sds_mgmt_env = (var.env == "ptlsbox") && strcontains(var.product, "sds") ? "ptlsbox" : "ptl"
   mgmt_env     = strcontains(var.product, "sds") ? local.sds_mgmt_env : local.cft_mgmt_env
   rg_name      = strcontains(var.product, "sds") ? var.env : local.mgmt_env
 }
