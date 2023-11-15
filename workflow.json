@@ -1717,7 +1717,7 @@
                             "runAfter": {},
                             "type": "JavaScriptCode",
                             "inputs": {
-                                "code": "const input = workflowContext.trigger.outputs.body\r\n\r\nif (input.pull_request && input.pull_request.body) {\r\n    input.pull_request.body = \"*** Truncated ***\"\r\n}\r\n\r\nif (input.changes && input.changes.body && input.changes.body.from) {\r\n    input.changes.body.from = \"*** Truncated ***\"\r\n}\r\n\r\nreturn input",
+                                "code": "const i = workflowContext.trigger.outputs.body;\r\n\r\ni.pull_request && (\r\n  i.pull_request.title && (i.pull_request.title = i.pull_request.title.replace(/[^a-zA-Z0-9\\s.,!?;:'\"-]/g, '')),\r\n  i.pull_request.body && (i.pull_request.body = \"*** Truncated ***\"),\r\n  [i.pull_request.head, i.pull_request.base].forEach(repo => repo && repo.repo && repo.repo.description && (repo.repo.description = \"\"))\r\n);\r\n\r\ni.repository && i.repository.description && (i.repository.description = \"\");\r\n\r\ni.changes && i.changes.title && i.changes.title.from && (i.changes.title.from = i.changes.title.from.replace(/[^a-zA-Z0-9\\s.,!?;:'\"-]/g, ''));\r\ni.changes && i.changes.body && i.changes.body.from && (i.changes.body.from = \"*** Truncated ***\");\r\n\r\nreturn i;",
                                 "explicitDependencies": {
                                     "includeTrigger": true
                                 }
