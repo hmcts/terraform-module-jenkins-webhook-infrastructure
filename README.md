@@ -32,21 +32,21 @@ module "jenkins-webhook-relay" {
 
 | Name | Version |
 |------|---------|
-| <a name="requirement_azurerm"></a> [azurerm](#requirement\_azurerm) | >= 3.54.0 |
+| <a name="requirement_azurerm"></a> [azurerm](#requirement\_azurerm) | >= 4.37.0 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| <a name="provider_azurerm"></a> [azurerm](#provider\_azurerm) | >= 3.54.0 |
+| <a name="provider_azurerm"></a> [azurerm](#provider\_azurerm) | >= 4.37.0 |
 | <a name="provider_local"></a> [local](#provider\_local) | n/a |
 
 ## Modules
 
 | Name | Source | Version |
 |------|--------|---------|
-| <a name="module_servicebus-namespace"></a> [servicebus-namespace](#module\_servicebus-namespace) | git::https://github.com/hmcts/terraform-module-servicebus-namespace | master |
-| <a name="module_servicebus-queue"></a> [servicebus-queue](#module\_servicebus-queue) | git::https://github.com/hmcts/terraform-module-servicebus-queue | master |
+| <a name="module_servicebus-namespace"></a> [servicebus-namespace](#module\_servicebus-namespace) | git::https://github.com/hmcts/terraform-module-servicebus-namespace | 4.x |
+| <a name="module_servicebus-queue"></a> [servicebus-queue](#module\_servicebus-queue) | git::https://github.com/hmcts/terraform-module-servicebus-queue | 4.x |
 
 ## Resources
 
