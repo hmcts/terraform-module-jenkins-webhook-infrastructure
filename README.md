@@ -21,7 +21,6 @@ module "jenkins-webhook-relay" {
   project                            = "sds" # or "cft"
   servicebus_enable_private_endpoint = var.servicebus_enable_private_endpoint
   queue_name                         = var.queue_name
-  zone_redundant                     = var.zone_redundant
   enable_workflow                    = var.enable_workflow
   common_tags                        = module.tags.common_tags
 }

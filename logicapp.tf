@@ -20,6 +20,10 @@ resource "azurerm_logic_app_workflow" "logic_app_workflow" {
   tags = var.common_tags
 }
 
+locals {
+  logic_app_tags = { for k, v in var.common_tags : k => v if v != null }
+}
+
 resource "azurerm_resource_group_template_deployment" "logic_app_deployment" {
   resource_group_name = azurerm_resource_group.azure_resource_group.name
   deployment_mode     = "Incremental"
@@ -30,11 +34,11 @@ resource "azurerm_resource_group_template_deployment" "logic_app_deployment" {
   parameters_content = jsonencode({
     "logic_app_name"         = { value = azurerm_logic_app_workflow.logic_app_workflow.name }
     "location"               = { value = var.location }
-    "commonTags"             = { value = base64encode(jsonencode(var.common_tags)) }
+    "commonTags"             = { value = base64encode(jsonencode(local.logic_app_tags)) }
     "subscription_id"        = { value = var.subscription_id }
     "sb_con_name"            = { value = azurerm_api_connection.connection.name }
     "integration_account_id" = { value = azurerm_logic_app_integration_account.this.id }
   })
 
-  tags = var.common_tags
+  tags = local.logic_app_tags
 }
