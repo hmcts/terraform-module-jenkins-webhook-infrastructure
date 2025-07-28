@@ -1,6 +1,6 @@
 module "servicebus-queue" {
   depends_on          = [module.servicebus-namespace]
-  source              = "git::https://github.com/hmcts/terraform-module-servicebus-queue?ref=master"
+  source              = "git::https://github.com/hmcts/terraform-module-servicebus-queue?ref=4.x"
   name                = var.queue_name
   namespace_name      = module.servicebus-namespace.name
   resource_group_name = azurerm_resource_group.azure_resource_group.name
@@ -11,7 +11,7 @@ module "servicebus-namespace" {
   providers = {
     azurerm.private_endpoint = azurerm.private_endpoint
   }
-  source                  = "git::https://github.com/hmcts/terraform-module-servicebus-namespace?ref=master"
+  source                  = "git::https://github.com/hmcts/terraform-module-servicebus-namespace?ref=4.x"
   name                    = "github-jenkins-${var.project}-${var.env}"
   resource_group_name     = azurerm_resource_group.azure_resource_group.name
   location                = var.location
@@ -19,7 +19,6 @@ module "servicebus-namespace" {
   common_tags             = var.common_tags
   project                 = var.project
   enable_private_endpoint = false #var.servicebus_enable_private_endpoint
-  zone_redundant          = var.zone_redundant
 }
 
 
