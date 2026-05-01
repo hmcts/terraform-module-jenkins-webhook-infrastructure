@@ -19,6 +19,7 @@ module "servicebus-namespace" {
   common_tags             = var.common_tags
   project                 = var.project
   enable_private_endpoint = false #var.servicebus_enable_private_endpoint
+  enable_public_access    = true
 }
 
 
