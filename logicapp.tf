@@ -18,6 +18,14 @@ resource "azurerm_logic_app_workflow" "logic_app_workflow" {
   }
 
   tags = var.common_tags
+
+  # The ARM template manages these Service Bus connection parameters.
+  lifecycle {
+    ignore_changes = [
+      parameters["$connections"],
+      workflow_parameters["$connections"],
+    ]
+  }
 }
 
 locals {
@@ -38,6 +46,9 @@ resource "azurerm_resource_group_template_deployment" "logic_app_deployment" {
     "subscription_id"        = { value = var.subscription_id }
     "sb_con_name"            = { value = azurerm_api_connection.connection.name }
     "integration_account_id" = { value = azurerm_logic_app_integration_account.this.id }
+    # Match the template defaults returned by Azure when reading the deployment.
+    "rg"               = { value = "" }
+    "servicebus_queue" = { value = "jenkins" }
   })
 
   tags = local.logic_app_tags
